@@ -44,14 +44,25 @@ iframe {
 	height: 480px;
 }
 
+.profile-pic{
+	max-width: 380px; height: auto;
+}
+
 @media only screen and (max-width: 600px) {
 	iframe {
 		width: 100%;
 		height: auto;
 	}
+	.card-iden {
+		margin-top: -100px;
+		border-radius: 30px;
+	}
 	header {
 		padding: 100px 0 200px;
 		background-image: url(../images/bg2.jpg);
 		background-size: contain;
+	}
+	.profile-pic{
+		max-width: 320px; height: auto;
 	}
 }
