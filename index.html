@@ -2,158 +2,348 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Danil Chandra</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Danil Chandra - Portfolio</title>
+  <style>
+    body {
+      background-color: #f9fafd;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #343a40;
+    }
+
+    .card-iden {
+      border-radius: 1rem;
+      border: none;
+    }
+
+    .img-profile {
+      border-radius: 0.75rem;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    }
+
+    .btn-custom-primary {
+      background: #007bff;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-custom-primary:hover {
+      background: #0056b3;
+    }
+
+    .btn-custom-secondary {
+      background: #6c757d;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-custom-secondary:hover {
+      background: #495057;
+    }
+
+    h1,
+    h4,
+    h5 {
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .social-icons img {
+      width: 36px;
+      margin-right: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    mark {
+      background-color: #ffe58a;
+      padding: 0 5px;
+      border-radius: 3px;
+    }
+
+    footer {
+      font-size: 0.875rem;
+      color: #6c757d;
+    }
+
+    .btn-info {
+      color: #fff;
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+      color: #fff;
+      background-color: #138496;
+      border-color: #117a8b;
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    /* @media (max-width: 767.98px) {
+      .img-profile {
+        width: 100% !important;
+        height: auto !important;
+      }
+    } */
+
+    .card.project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .card.project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 123, 255, 0.3);
+    }
+
+    .background-box {
+      background: #e9f2ff;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    .section-card {
+      position: relative;
+      background: linear-gradient(135deg, #f0f4ff, #e6ecff);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-label {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: #ffffff;
+      border: 2px solid #d12a2a;
+      color: #d12a2a;
+      font-weight: 600;
+      padding: 5px 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .custom-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66%; 
+    overflow: hidden;
+    border-radius: 8px;
+    
+}
+
+.custom-iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+  </style>
 </head>
 
 <body>
     <header></header>
-    <div class="container">
-        <div class="card card-iden shadow-lg">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6 text-center align-self-center">
-                        <img src="images/me.jpg" alt="profilepicture" class="img-fluid" width="400px">
-                        <div class="row mt-3 text-left justify-content-end">
-                            <div class="col-md-8 col-12 ">
-                                <img src="images/cv.png" alt="cv logo" class="img-profile d-none d-md-inline-block"
-                                    width="40px">
-                                <img src="images/cv.png" alt="cv logo" class="img-profile d-inline-block d-md-none"
-                                    width="25px">
-                                <a class="btn btn-success rounded"
-                                    href="https://drive.google.com/drive/folders/1VIOZtws9j6laKA2cZcVlC95xUJrg8B5n?usp=sharing"
-                                    target="_blank">Download CV</a>
-                            </div>
-
+    <div class="container py-5">
+        <div class="card card-iden shadow-sm p-4">
+            <div class="row g-4 align-items-center">
+                <!-- Left Column: Image and Downloads -->
+                <div class="col-lg-5 text-center">
+                    <img src="images/me.jpg" alt="Danil Chandra Saputra" class="img-profile img-fluid mb-4"
+                        style="max-width: 350px; height: auto;" />
+                    <div class="row mt-3 text-left justify-content-center align-items-center">
+                        <div class="col-md-5 col-12" style="text-align: left;" >
+                            <img src="images/cv.png" alt="cv logo" class="img-profile d-none d-md-inline-block"
+                                width="40px">
+                            <img src="images/cv.png" alt="cv logo" class="img-profile d-inline-block d-md-none"
+                                width="25px">
+                            <a class="btn btn-success rounded"
+                                href="https://drive.google.com/file/d/1AObSoMffhXM9nAJ45fWcG8OVEUBccuiM/view?usp=drive_link"
+                                target="_blank">Download CV</a>
                         </div>
-                        <div class="row mt-3 text-left justify-content-end">
-                            <div class="col-md-8 col-12">
-                                <img src="images/transcript.png" alt="transcriptlogo"
-                                    class="img-profile d-none d-md-inline-block" width="40px">
-                                <img src="images/transcript.png" alt="cv logo"
-                                    class="img-profile d-inline-block d-md-none" width="25px">
-                                <a class="btn btn-info rounded"
-                                    href="https://drive.google.com/file/d/1nKwBx9WlMVV2SXgIqbLjMK8LkkSfZUzM/view?usp=sharing"
-                                    target="_blank">Download Academic Transcript</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6 pl-0">
-                        <h4 class="pt-3">Hello, I'm</h4>
-                        <h1>Danil Chandra Saputra</h1>
-                        <p>I am a student at Bunda Mulia University in majority of informatics also as a administration
-                            staff at Sentral Es Kristal
-                            Abadi. I am doing good both in education and working field. So far i still have a quite good
-                            GPA even though im working.
-                            Working and studying are tough but with good time management i could possibly through them
-                            with a good result.
-
-                            One top of everything, i always believe in the value of human capital and my favorite motto
-                            is
-                            <mark>"Work for Cause, not for Applause".</mark>
-                        </p>
-                        <div class="text-right">
-                            <a href="mailto: chandra.danil15@gmail.com" target="_blank" class="linkme"><img
-                                    src="images/gmail.svg" alt="gmaillogo" class="img-profile mx-1" width="70px"></a>
-                            <a href="https://t.me/Danil_Chandra" target="_blank" class="linkme">
-                                <img src="images/telegram.svg" alt="telegramlogo" class="img-profile mx-1" width="40px">
-                            </a>
-                            <a href="https://wa.me/6281282233175" target="_blank" class="linkme">
-                                <img src="images/wa.svg" alt="whatsapplogo" class="img-profile mx-1" width="50px">
-                            </a>
-                            <a href="https://www.linkedin.com/in/danil-c-494281117/" target="_blank" class="linkme">
-                                <img src="images/linkedin.svg" alt="linkedinlogo" class="img-profile mx-1" width="40px">
-                            </a>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-3 col-4">
-                                <img src="images/ubmlogo.jpg" alt="ubmlogo" class="img-profile" width="100px">
-                            </div>
-                            <div class="col-lg-9 col-8">
-                                <h5 class="font-weight-bold">Bunda Mulia University</h5>
-                                <h6>Bachelor's Degree, Informatics </h6>
-                                <h6 class="font-weight-light">[2018 - 2022] </h6>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-3 col-4">
-                                <img src="images/Logo-SMAN-19.jpg" alt="ubmlogo" class="img-profile" width="100px">
-                            </div>
-                            <div class="col-lg-9 col-8">
-                                <h5 class="font-weight-bold">SMAN19 Jakarta</h5>
-                                <h6>Graduated High School, Natural Science (Biology) </h6>
-                                <h6 class="font-weight-light">[2015 - 2018] </h6>
-                            </div>
+                        <div class="col-md-7 col-12 mt-3" style="text-align: left;">
+                            <img src="images/transcript.png" alt="transcriptlogo"
+                                class="img-profile d-none d-md-inline-block" width="40px">
+                            <img src="images/transcript.png" alt="cv logo" class="img-profile d-inline-block d-md-none"
+                                width="25px">
+                            <a class="btn btn-info rounded"
+                                href="https://drive.google.com/file/d/12Du_cwFBZUOrXv2GKowrkLyUSlntMq_s/view?usp=drive_link"
+                                target="_blank">Download Academic Record</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Right Column: About and Education -->
+                <div class="col-lg-7">
+                    <h4>Hello, I'm</h4>
+                    <h1 class="mb-3">Danil Chandra Saputra</h1>
+                    <p>
+                        Detail-oriented and motivated web developer with solid experience building web applications
+                        using C# and JavaScript.
+                        Currently working at PT Pro-Int Dinamika, with exposure to SaaS platforms such as HRIS and ERP
+                        systems. Proven ability
+                        to deliver clean, testable, and maintainable code for both front-end and back-end components.
+                        Adept at collaborating
+                        across teams, analyzing client requirements, and applying best practices in modern software
+                        development.
+                    </p>
+                    <p>
+                        Above all, I value human capital and live by my favorite motto:
+                        <mark>"Work for Cause, not for Applause".</mark>
+                    </p>
+
+                    <!-- Contact Icons -->
+                    <div style="text-align: right;">
+                        <a href="mailto: danil.chandra15@gmail.com" target="_blank" class="linkme">
+                            <img src="images/gmail.svg" alt="gmaillogo" class="img-profile mx-1" width="70px"></a>
+                        <a href="https://t.me/Danil_Chandra" target="_blank" class="linkme"
+                            style="text-decoration: none;">
+                            <img src="images/telegram.svg" alt="telegramlogo" class="img-profile mx-1" width="40px">
+                        </a>
+                        <a href="https://wa.me/6281282233175" target="_blank" class="linkme" style="text-decoration: none;">
+                            <img src="images/wa.svg" alt="whatsapplogo" class="img-profile mx-1" width="50px">
+                        </a>
+                        <a href="https://www.linkedin.com/in/danil-c-494281117/" target="_blank" class="linkme" style="text-decoration: none;">
+                            <img src="images/linkedin.svg" alt="linkedinlogo" class="img-profile mx-1" width="40px">
+                        </a>
+                    </div>
+
+                    <div class="row mt-4">
+                        <!-- Working Experience -->
+                        <div class="col-md-6 col-sm-12">
+                          <div class="section-card">
+                            <div class="section-label">Working Experience</div>
+                            <div class="d-flex align-items-start mt-3">
+                              <img src="images/ppd.png" alt="Pro-Int Dinamika" class="me-3" style="width: 50px;">
+                              <div>
+                                <h6 class="mb-1">PT Pro-Int Dinamika</h6>
+                                <small>Web Developer (2022 - Present)</small>
+                                <p class="mb-0 mt-2" style="font-size: 0.9rem;">
+                                  Build and maintain HRIS & ERP systems using ASP.NET Core, SQL Server, jQuery, and Bootstrap. Collaborate with cross-functional teams to deliver scalable features.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Education -->
+                        <div class="col-md-6 col-sm-12">
+                          <div class="section-card">
+                            <div class="section-label">Education</div>
+                            <div class="d-flex align-items-start mt-3">
+                              <img src="images/ubmlogo.png" alt="UBM Logo" class="me-3" style="width: 50px;">
+                              <div>
+                                <h6 class="mb-1">Bunda Mulia University</h6>
+                                <small>Bachelor's Degree (2018 - 2022)</small>
+                                <p class="mb-0 mt-2" style="font-size: 0.9rem;">
+                                  Graduated with GPA 4.0, recognized as best student of the batch in Informatics.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
             </div>
         </div>
-        <div class="mt-5">
-            <h1 class="text-center">Portofolio Project</h1>
-            <h3>Java </h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/13zVpLQXre1nOuAbFN0XcsWPV_TIiKXBL/preview" width="640"
-                        allowfullscreen height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>OCR-ator</h4>
-                    <h6 class="font-weight-light">[Desktop - Juni 2022]</h5>
-                        <p>Tech Used : Java, MariaDB</p>
-                        <p>OCR-ator is a future calculator, just scan the math problem and the result will come out in
-                            an instant.
-                            Without worrying typo input. This project, i used for my undergraduate's thesis.</p>
+
+        <!-- Portfolio Section -->
+        <h2 class="section-title text-center">Portfolio Projects</h2>
+
+        <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/13zVpLQXre1nOuAbFN0XcsWPV_TIiKXBL/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>OCR-ator (Java)</h5>
+                        <p class="text-muted">Desktop - June 2022</p>
+                        <p>Tech Used: Java, MariaDB</p>
+                        <p>
+                            OCR-ator is a future calculator that scans math problems and provides instant results,
+                            eliminating typos. This
+                            project was my undergraduate thesis.
+                        </p>
                         <ul>
-                            <li>Scan Calulator</li>
+                            <li>Scan Calculator</li>
                             <li>Image pre-processing</li>
-                            <li>Flexibility adding new data set</li>
-                            <li>Features extracted using population matrix</li>
+                            <li>Flexibility adding new data sets</li>
+                            <li>Feature extraction using population matrix</li>
                             <li>KNN algorithm with Manhattan Distance measurement</li>
                         </ul>
                         <a href="https://docs.google.com/spreadsheets/d/1Bbe6sqIWJtFiKuNKLiVtGNuwgnTmlNUltQS3OyURg9M/edit?usp=sharing"
-                            target="_blank">Dataset Spreadsheet</a>
+                            target="_blank" class="btn btn-sm btn-primary">Dataset Spreadsheet</a>
+                    </div>
                 </div>
             </div>
-            <h3>Dart - Flutter </h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/1iZWrauWeNtoma2zxWPrPqgWJHZMOEv9c/preview" width="640"
-                        allowfullscreen height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Health Care</h4>
-                    <h6 class="font-weight-light">[Android & IOS - December 2020]</h5>
-                        <p>Tech Used : Flutter, Firebase</p>
-                        <p>Team with : Jaeson (Content Writer) , Eko (UI Designer)</p>
+
+            <!-- Project 2 -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1iZWrauWeNtoma2zxWPrPqgWJHZMOEv9c/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Health Care</h5>
+                        <p class="text-muted">Android & IOS - December 2020</p>
+                        <p>Tech Used: Flutter, Firebase</p>
                         <p>Health Care is a medical application which supported on IOS and Android. Health Care have
                             been deployed on Dec 2020 for mobile programming's final exam. Here some features are
                             available on Health Care.</p>
-                        <ul>
-                            <li>Login - Registration</li>
-                            <li>Chat System</li>
-                            <li>Databases Integrated</li>
-                            <li>Focus on UI/UX</li>
-                        </ul>
-                        <a href="https://drive.google.com/file/d/1LGynHsxuR31wkxUfepLWkvY34nMnsg5x/view?usp=sharing"
-                            target="_blank">Download APK here</a>
+                            <ul>
+                                <li>Login - Registration</li>
+                                <li>Chat System</li>
+                                <li>Databases Integrated</li>
+                                <li>Focus on UI/UX</li>
+                            </ul>
+                            <a href="https://drive.google.com/file/d/1LGynHsxuR31wkxUfepLWkvY34nMnsg5x/view?usp=sharing"
+                                target="_blank"  class="btn btn-sm btn-primary">Download APK here</a>
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-3">PHP - Codeigniter</h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/1ValOf2Z6geWu_JETfsA5rDGEvPRWt-ws/preview"
-                        allowfullscreen width="640" height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Nomads Online Courses</h4>
-                    <h6 class="font-weight-light">[Responsive Website - May 2020]</h5>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1ValOf2Z6geWu_JETfsA5rDGEvPRWt-ws/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Nomads Online Courses</h5>
+                        <p class="text-muted">Responsive Website - May 2020</p>
                         <p>Tech Used : Codeigniter, MariaDB, GoogleSMTP</p>
                         <p>Nomads online is a online edutech based on website. This website is responsive so people
                             can use in any devices and still can get its UI or UX instead of that those some
@@ -168,18 +358,21 @@
                             <li>Forgot Password</li>
                         </ul>
                         <a href="https://drive.google.com/file/d/1hIQTus4UwXiM79zfYJvKKaU7gZ8Enz8h/view?usp=sharing"
-                            target="_blank">Download APK here</a>
+                            target="_blank" class="btn btn-sm btn-primary">Download APK here</a>
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-3">Python - Flask</h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/1MvDyIeOUzHhfTJZePOODBb2Anbvr8oyW/preview"
-                        allowfullscreen width="640" height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Suikoden Website</h4>
-                    <h6 class="font-weight-light">[Responsive Website - June 2021]</h5>
+
+            <!-- Project 4 -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1MvDyIeOUzHhfTJZePOODBb2Anbvr8oyW/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Suikoden Website</h5>
+                        <p class="text-muted">Responsive Website - June 2021</p>
                         <p>Tech Used : Flask, Sqllite, GoogleSMTP</p>
                         <p>A game company wants to build a web application that contains a database of monster
                             information and items (items used in the game). This web application must also have a
@@ -191,20 +384,21 @@
                             <li>Upload and Download</li>
                         </ul>
                         <a href="https://drive.google.com/file/d/1_zmJc2jafSfpdxzur3nrOquzKucifLvz/view?usp=sharing"
-                            target="_blank">Fun Fact Report</a>
+                            target="_blank" class="btn btn-sm btn-primary">Fun Fact Report</a>
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-3">C# - Unity</h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/13J4L8jNhbI9896LHtoFzoAkxetI5KslH/preview"
-                        allowfullscreen width="640" height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Zombie Crasher</h4>
-                    <h6 class="font-weight-light">[Desktop Game - June 2021]</h5>
+
+             <!-- Project 5 -->
+             <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/13J4L8jNhbI9896LHtoFzoAkxetI5KslH/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Zombie Crasher</h5>
                         <p>Tech Used : Unity</p>
-                        <p>Team with : Eko (UI Designer)</p>
                         <p>Zombie Crasher has a endless game genre that palyer must protect crystal or hisself as
                             long as possible.</p>
                         <ul>
@@ -213,18 +407,20 @@
                             <li>Bug Fixed</li>
                         </ul>
                         <a href="https://drive.google.com/file/d/1CBwmeCfuDdkU-ZjLMF9b3YGsVt61HC0J/view?usp=sharing"
-                            target="_blank">Download Game here</a>
+                            target="_blank" class="btn btn-sm btn-primary">Download Game here</a>
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-3">C# - AR Vuforia</h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/1CsaTdMX0M6WR-mhx6GRyDx0RukU-tSen/preview"
-                        allowfullscreen width="640" height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Suikoden AR</h4>
-                    <h6 class="font-weight-light">[Mobile Game - June 2021]</h5>
+
+             <!-- Project 6 -->
+             <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1CsaTdMX0M6WR-mhx6GRyDx0RukU-tSen/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Suikoden AR</h5>
                         <p>Tech Used : Unity, Vuforia</p>
                         <p>Augmented Reality simple quiz game. Scan object or marker to make character appears.</p>
                         <ul>
@@ -233,22 +429,24 @@
                             <li>Bug Fixed</li>
                         </ul>
                         <a href="https://drive.google.com/file/d/1a3wygVtcQBZiaf1e4_Ns5ga5EASWjI62/view?usp=sharing"
-                            target="_blank">Download APK here</a>
+                            target="_blank" class="btn btn-sm btn-primary">Download APK here</a>
                         <div>
                             <a href="https://drive.google.com/file/d/1Ip2iAjrq4NIrOUA_2WZSkDQKFKh1SRRr/view?usp=sharing"
-                                target="_blank">Download Marker here</a>
+                                target="_blank" class="btn btn-sm btn-warning mt-2">Download Marker here</a>
                         </div>
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-3">Maya Animation</h3>
-            <div class="row">
-                <div class="col-lg-7">
-                    <iframe src="https://drive.google.com/file/d/1m1Tf1xMChm6y0FIx452n8GEf8ZY_hSQy/preview"
-                        allowfullscreen width="640" height="480" allow="autoplay"></iframe>
-                </div>
-                <div class="col-lg-5">
-                    <h4>Running Man Animation</h4>
-                    <h6 class="font-weight-light">[Animation - Dec 2020]</h5>
+
+               <!-- Project 7 -->
+               <div class="col-md-6 col-xl-4">
+                <div class="card project-card shadow-sm h-100">
+                    <div class="custom-iframe-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1m1Tf1xMChm6y0FIx452n8GEf8ZY_hSQy/preview"
+                        title="OCR-ator Project" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5>Running Man Animation</h5>
                         <p>Tech Used : Maya</p>
                         <p>30+ seconds animation 25fps with a character running avoid obstacles. Animation should be
                             rendered by Arnold Render</p>
@@ -258,21 +456,40 @@
                             <li>Arnold Render</li>
                             <li>Camera position</li>
                         </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <footer class="bg-white py-3 d-block">
-            <div class="container my-auto">
-                <div class="text-center my-auto">
-                    <hr>
-                    <span> 2022 Copyright DC • Danil Chandra Saputra</span>
-                </div>
-            </div>
+
+
+        <footer class="text-center mt-5 mb-3">
+            <hr />
+            <p>© 2025 Danil Chandra Saputra • All rights reserved</p>
         </footer>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/all.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animasi fade-in saat scroll pakai Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card.project-card');
+
+            const observerOptions = {
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
 </html>
